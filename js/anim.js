@@ -267,7 +267,7 @@ var anim;
   var lani = [2, 0, 1, 3, 4, 5, 9, 11, 12, 13];
 
   (async ()=> {
-    await flod('/js/RobotExpressive.glb').then(gltf=> {
+    await flod('js/RobotExpressive.glb').then(gltf=> {
 
       animations = gltf.animations;
       mixer = new gg.AnimationMixer(gltf.scene);
