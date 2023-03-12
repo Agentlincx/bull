@@ -147,7 +147,7 @@ import {
 
 
   (async ()=> {
-    await flod('./js/coin.glb').then(gltf=> {
+    await flod('js/coin.glb').then(gltf=> {
 
       animations = gltf.animations;
       mixer = new gg.AnimationMixer(gltf.scene);
