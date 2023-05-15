@@ -1,10 +1,19 @@
+
+
+
+import {GLTFLoader} from "/js/GLTFLoader.js";
+
+
+import * as gg from '/js/three.module.js';
+/*
+import {GLTFLoader} from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+
 import * as gg from 'three';
-import {
-  GLTFLoader
-} from 'ld';
+import * as GLTFLoader from 'ldd';
+*/
 
-(function() {
 
+(function(){
   var canvas = document.querySelector('#can1');
 
   const rend = new gg.WebGLRenderer({
@@ -55,9 +64,8 @@ import {
   //rew.update();
 
 
-  var anim;
 
-  (anim = ()=> {
+  function anim() {
 
     requestAnimationFrame(anim);
 
@@ -80,11 +88,12 @@ import {
 
     //console.log(vb);
     //ec.render(anim);
-  })();
-
-
+  }
+  
+anim();
 
 })();
+
 
 
 
@@ -147,7 +156,7 @@ import {
 
 
   (async ()=> {
-    await flod('js/coin.glb').then(gltf=> {
+    await flod('/js/coin.glb').then(gltf=> {
 
       animations = gltf.animations;
       mixer = new gg.AnimationMixer(gltf.scene);
@@ -179,9 +188,7 @@ import {
   const clock = new gg.Clock();
 
 
-var anim;
-
-  (anim = ()=> {
+function anim() {
 
     requestAnimationFrame(anim);
 
@@ -202,11 +209,13 @@ var anim;
       rend.render(scene, cam);
 
       
-    })();
+    }
+    
+    anim();
 
 
   })();
-  
+
   
   
 (function robt() {
@@ -267,7 +276,7 @@ var anim;
   var lani = [2, 0, 1, 3, 4, 5, 9, 11, 12, 13];
 
   (async ()=> {
-    await flod('js/RobotExpressive.glb').then(gltf=> {
+    await flod('/js/RobotExpressive.glb').then(gltf=> {
 
       animations = gltf.animations;
       mixer = new gg.AnimationMixer(gltf.scene);
@@ -318,9 +327,9 @@ var anim;
   const clock = new gg.Clock();
 
 
-  var anim, vb = 0, va = 0, ki;
+  var vb = 0, va = 0, ki;
 
-  (anim = ()=> {
+  function anim() {
 
     requestAnimationFrame(anim);
 
@@ -378,7 +387,11 @@ var anim;
 
       //console.log(vb);
       //ec.render(anim);
-    })();
+    }
+    
+    anim();
 
 
   })();
+  
+ 
