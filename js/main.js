@@ -2,7 +2,7 @@
   var i = 0;
   var ii = 0;
   var check = 0;
-  var speed = 50;
+  var speed = 5;
   var q = '';
   var arr = ['Build',
     'Develop',
@@ -45,7 +45,7 @@
 var qp = document.querySelector("body");
 
 (function() {
-  var a = JSON.parse('{"nav":[["Home","index.html"], ["Perks", "#k2"], ["Partners", "#partn"], ["Reviews", "#rev"], ["Contact", "#end"], ["About Us", "abt.html"]]}');
+  var a = JSON.parse('{"nav":[["Home","index.html"], ["Perks", "#k2"], ["Partners", "#partn"], ["Reviews", "#rev"], ["Contact", "#end"], ["About Us", "#p1"]]}');
 
   var b = document.querySelector("#navc>div");
   for (var i = 0; i < a.nav.length; i++) {
@@ -190,7 +190,7 @@ function nav(a) {
     a.style.opacity = "0";
 
     var b = document.createElement("div");
-    b.innerText = v;
+    b.innerText = "0"+v;
     a.appendChild(b);
 
     var c = document.createElement("div");
@@ -315,10 +315,10 @@ function antt(a) {
     function() {
       if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         a.style.backgroundColor = "#a87825";
-        b.style.backgroundColor = "#a87825";
+        //b.style.backgroundColor = "#a87825";
       } else {
         a.style.backgroundColor = "transparent";
-        b.style.backgroundColor = "transparent";
+        //b.style.backgroundColor = "transparent";
       }
     });
 })();
@@ -363,7 +363,7 @@ function antt(a) {
 
 (function () {
 
-  var tes = JSON.parse('{"ti":[["Lionel Messi", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Cristiano Ronaldo", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Neymar jr", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Lionel Messi", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Cristiano Ronaldo", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Neymar jr", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Lionel Messi", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Cristiano Ronaldo", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Neymar jr", "Yiu really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."]]}');
+  var tes = JSON.parse('{"ti":[["Briggs", "You really did an amazing job in bringing my brand to limelight. Looking forward to working again with you."], ["Alex McCauley", "Nice job. The numbers have never been higher."], ["Roshan", "You really impressed the organization."], ["David","The charts numbers are impressive all thanks to you."], ["Scott", "Really good job."], ["Christian", "Really amazed. Our project was a huge success."], ["Jacob", "Officially my new shilling team."], ["Ruiz", "We dominated the crypto world through your agency. Good job."], ["Kelvin","Amazing results. Beyond my expectations."]]}');
 
 
   var a = document.querySelector("#arev>div");
@@ -413,7 +413,7 @@ function antt(a) {
 
 (function() {
 
-  var fq = JSON.parse('{"fq":[["What is Acemill?","Acemill is a digital platform for investing and mining Funds and Tokens through access to various financial products while maintaining a safe and secure environ."], ["What platforms are supported?","Web."], ["How do i begin?","Registering with ace inc involves user\'s mobile number and valid email address. You will also need to upload your KYC documents after registration. The documents includes :<ol><li>Passport photograph</li><li>BVN</li><li>Valid ID Card - International Passport, Driver\'s license, Voter\'s card or National ID Card</li></ol>"], ["How do i fund my Wallet?","You can top-up your wallet by:<ul><li>Via paystack gateway</li><li>Via dtranzact</li><li>Via direct transfer into the Ace inc account 0819497682 with Sterling Bank and your account will be funded same day</li></ul>"], ["How do i invest?","Select one or more options from the array of products, enter amount you wish to invest, confirm transaction and make payment."], ["How do i withdraw funds?","Your KYC documents  and account must be updated verified to make a successful withdrawal. Provide bank account details, enter amount to be withdrawn, confirm transaction by entering withdrawal pin."], ["How to make 3rd party transfers?","You can transfer funds from wallet to another user wallet. In addition to sharing, ace tokens can also be shared from one bin to another."], ["How do i convert ace tokens to money?","Ace token value are determined based on the market value. At any point in which you want to convert token to funds, simply click on Market and either sell to Ace inc which is faster or search for a potential buyer."]]}');
+  var fq = JSON.parse('{"fq":[["Who is Ace Shillers?","Ace shillers is a group of dedicated social media workers aimed at creating awareness, recognition and promoting of Business brands."], ["What platforms are supported for shilling?","All social media platforms."], ["How do i begin", "Click any of our socials to begin."], ["How long do transactions last?","Transactions can last as long as possible depending on the negotiations"]]}');
 
   var a = document.querySelector("#k6>div:nth-child(2)");
 
@@ -467,4 +467,14 @@ function antt(a) {
         }
       }
     });
+})();
+
+(function() {
+  var a = document.querySelector("#part>div:nth-of-type(2)");
+  var b = ["Apers shillers", "Bullish shillers", "Viking battalions"];
+  for (var p in b) {
+    var c = document.createElement("div");
+    c.innerText = b[p];
+    a.appendChild(c);
+  }
 })();
