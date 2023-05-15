@@ -3,10 +3,10 @@
 
 import {GLTFLoader} from "./js/GLTFLoader.js";
 
-
+/*
 import * as gg from './js/three.module.js';
 
-/*
+
 import {GLTFLoader} from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
 
 import * as gg from 'three';
