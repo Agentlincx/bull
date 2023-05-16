@@ -652,12 +652,12 @@ hr {
 
 #arev>div>div>div:nth-child(2)>div:first-child {
   font-weight: 900;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #a87825;
 }
 
 #arev>div>div>div:nth-child(2)>div:nth-child(2) {
-  margin-top: 1rem;
+  margin-top: .8rem;
   color: #ffffff90;
   font-size: 1rem;
 }
@@ -695,7 +695,7 @@ hr {
 
 #k6>div:nth-child(2)>div>div:first-child {
   font-weight: 900;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #a87825;
 }
 
@@ -704,7 +704,7 @@ hr {
   color: rgba(255,255,255,0.7);
   max-height: 0;
   overflow: hidden;
-  font-size: .8rem;
+  font-size: 1.1rem;
   transition: max-height 0.2s ease-out;
 }
 
@@ -788,7 +788,7 @@ hr {
 
 #end ul>li {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: .8rem;
 }
 
 #end ul>li>a>i {
