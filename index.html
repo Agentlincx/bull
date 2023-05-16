@@ -219,30 +219,30 @@
 
 
 
-    import * as three from 'https://unpkg.com/three@0.139.2/build/three.module.js';
+    import * as THREE from 'https://unpkg.com/three@0.129.0/build/three.module.js';
 
 
-    import {GLTFLoader} from 'https://unpkg.com/three@0.139.2/examples/jsm/loaders/GLTFLoader.js';
+    import {GLTFLoader} from 'https://unpkg.com/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
 
 
 
     (function() {
       var canvas = document.querySelector('#can1');
 
-      const rend = new three.WebGLRenderer({
+      const rend = new THREE.WebGLRenderer({
         canvas: canvas,
         antialiasing: true,
         logarithmicDepthBuffer: true,
         shadowMap: true,
         //alpha: true,
-        shadowMapType: three.PCFSoftShadowMap
+        shadowMapType: THREE.PCFSoftShadowMap
       });
       rend.shadowMap.enabled = true;
       rend.setClearColor(0x000000, 0.96);
 
 
       var fov = 75;
-      const cam = new three.PerspectiveCamera(fov,
+      const cam = new THREE.PerspectiveCamera(fov,
         0.1,
         1,
         900);
@@ -251,10 +251,10 @@
         10);
 
       //scene
-      const scene = new three.Scene();
-      scene.fog = new three.Fog('white', 20, 100);
+      const scene = new THREE.Scene();
+      scene.fog = new THREE.Fog('white', 20, 100);
 
-      const light = new three.DirectionalLight('white',
+      const light = new THREE.DirectionalLight('white',
         2);
       light.position.set(-9,
         3,
@@ -263,8 +263,8 @@
       scene.add(light);
 
 
-      var box = new three.Points(new three.SphereGeometry(18, 40, 40,), new three.PointsMaterial({
-        side: three.FrontSide,
+      var box = new THREE.Points(new THREE.SphereGeometry(18, 40, 40,), new THREE.PointsMaterial({
+        side: THREE.FrontSide,
         size: 0.01,
         color: "white"
       }));
@@ -305,20 +305,20 @@
 
       var canvas = document.querySelector('#coin');
 
-      const rend = new three.WebGLRenderer({
+      const rend = new THREE.WebGLRenderer({
         canvas: canvas,
         antialiasing: true,
         logarithmicDepthBuffer: true,
         shadowMap: true,
         alpha: true,
-        shadowMapType: three.PCFSoftShadowMap
+        shadowMapType: THREE.PCFSoftShadowMap
       });
       rend.shadowMap.enabled = true;
       rend.setClearColor(0x000000, 0);
 
 
       var fov = 75;
-      const cam = new three.PerspectiveCamera(fov,
+      const cam = new THREE.PerspectiveCamera(fov,
         0.1,
         1,
         900);
@@ -327,12 +327,12 @@
         20);
 
       //scene
-      const scene = new three.Scene();
-      //scene.fog=new three.Fog('white',50,100);
+      const scene = new THREE.Scene();
+      //scene.fog=new THREE.Fog('white',50,100);
 
-      const obj = new three.Object3D();
+      const obj = new THREE.Object3D();
 
-      const light = new three.DirectionalLight('white',
+      const light = new THREE.DirectionalLight('white',
         2);
       light.position.set(-9,
         9,
@@ -361,7 +361,7 @@
         await flod('js/coin.glb').then(gltf=> {
 
           animations = gltf.animations;
-          mixer = new three.AnimationMixer(gltf.scene);
+          mixer = new THREE.AnimationMixer(gltf.scene);
 
           gltf.scene.position.set(0, 0, 0);
           gltf.scene.scale.set(8, 8, 8);
@@ -377,7 +377,7 @@
           });
       })();
 
-      const clock = new three.Clock();
+      const clock = new THREE.Clock();
 
 
       function anim() {
@@ -414,13 +414,13 @@
 
       var canvas = document.querySelector('#robt');
 
-      const rend = new three.WebGLRenderer({
+      const rend = new THREE.WebGLRenderer({
         canvas: canvas,
         antialiasing: true,
         logarithmicDepthBuffer: true,
         shadowMap: true,
         alpha: true,
-        shadowMapType: three.PCFSoftShadowMap
+        shadowMapType: THREE.PCFSoftShadowMap
       });
       rend.shadowMap.enabled = true;
       rend.setClearColor(0x000000,
@@ -428,7 +428,7 @@
 
 
       var fov = 75;
-      const cam = new three.PerspectiveCamera(fov,
+      const cam = new THREE.PerspectiveCamera(fov,
         0.1,
         1,
         900);
@@ -439,10 +439,10 @@
 
 
       //scene
-      const scene = new three.Scene();
-      //scene.fog=new three.Fog('white',50,100);
+      const scene = new THREE.Scene();
+      //scene.fog=new THREE.Fog('white',50,100);
 
-      const light = new three.DirectionalLight('white',
+      const light = new THREE.DirectionalLight('white',
         2);
       light.position.set(-9,
         9,
@@ -480,7 +480,7 @@
         await flod('/js/RobotExpressive.glb').then(gltf=> {
 
           animations = gltf.animations;
-          mixer = new three.AnimationMixer(gltf.scene);
+          mixer = new THREE.AnimationMixer(gltf.scene);
 
 
           var bb = document.querySelector('#k4');
@@ -524,7 +524,7 @@
 
 
 
-      const clock = new three.Clock();
+      const clock = new THREE.Clock();
 
 
       var vb = 0, va = 0, ki;
