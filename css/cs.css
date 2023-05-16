@@ -137,13 +137,13 @@ a {
   
   #end>div:first-child {
     order: 4;
-    padding-top: 10px;
   }
   
 }
 
 #fav {
-  height: 2.4vmax;
+  height: 2.9vmax;
+  padding-top: 20px;
 }
 
 
