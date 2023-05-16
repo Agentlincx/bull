@@ -363,13 +363,13 @@ a {
 }
 
 #inv>div>div:first-child {
-  font-size: .8rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
 #inv>div>div:nth-child(2) {
   color: #ffffff70;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 #ds1 {
@@ -655,12 +655,12 @@ hr {
 
 #arev>div>div>div:nth-child(2)>div:first-child {
   font-weight: 900;
-  font-size: .9rem;
+  font-size: 1.3rem;
   color: #a87825;
 }
 
 #arev>div>div>div:nth-child(2)>div:nth-child(2) {
-  margin-top: .5rem;
+  margin-top: 1rem;
   color: #ffffff90;
   font-size: .7rem;
 }
