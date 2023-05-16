@@ -363,13 +363,13 @@ a {
 }
 
 #inv>div>div:first-child {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
 #inv>div>div:nth-child(2) {
   color: #ffffff70;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 #ds1 {
@@ -517,8 +517,6 @@ hr {
 }
 
 #k2 .panim {
-  /*
-  */
   transform: rotateX(70deg);
   font-size: 1rem;
 }
@@ -655,14 +653,14 @@ hr {
 
 #arev>div>div>div:nth-child(2)>div:first-child {
   font-weight: 900;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #a87825;
 }
 
 #arev>div>div>div:nth-child(2)>div:nth-child(2) {
   margin-top: 1rem;
   color: #ffffff90;
-  font-size: .7rem;
+  font-size: 1.3rem;
 }
 
 #arev .fadt {
@@ -755,7 +753,7 @@ hr {
 }
 
 #alm>div:first-child>div:nth-of-type(2) {
-  font-size: .9rem;
+  font-size: 1.3rem;
 }
 
 #arev>div>div {
@@ -786,7 +784,7 @@ hr {
 
 #end ul>li:first-child {
   font-weight: 900;
-  font-size: .9rem;
+  font-size: 1.5rem;
 }
 
 #end ul>li {
