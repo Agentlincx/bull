@@ -143,7 +143,6 @@ a {
 
 #fav {
   height: 2.9vmax;
-  padding-top: 20px;
 }
 
 
@@ -753,7 +752,7 @@ hr {
 }
 
 #alm>div:first-child>div:nth-of-type(2) {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 #arev>div>div {
@@ -779,17 +778,17 @@ hr {
 
 #end>div:first-child {
   font-family: bevel;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
 }
 
 #end ul>li:first-child {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 #end ul>li {
   margin-top: 1rem;
-  font-size: .7rem;
+  font-size: 1.1rem;
 }
 
 #end ul>li>a>i {
