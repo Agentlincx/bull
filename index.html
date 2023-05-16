@@ -6,29 +6,21 @@
   <link rel="stylesheet" href="./css/cs.css" type="text/css" media="all" />
   <link rel="stylesheet" href="./font/css/all.css" type="text/css" media="all" />
   <script defer src="./js/main.js" type="text/javascript" charset="utf-8"></script>
-  <!--script async type="importmap">
-    {
-      "imports": {
-        "three" : "/js/three.module.js"
-        "ldd": "/js/GLTFLoader.js"
-      }
-    }
-  </script-->
-  
+
   <title>Ace Shill Community</title>
 </head>
 <body>
   <canvas id="can1"></canvas>
 
   <div id="p2">
-      <div id="ds1"></div>
-      <div id="ds2"></div>
-    </div>
+    <div id="ds1"></div>
+    <div id="ds2"></div>
+  </div>
 
 
   <div id="nav">
     <div>
-      <img id="fav" src="./img/con.png" alt="" />
+      <img id="fav" src="/img/con.png" alt="" />
       Ace Shillers
     </div>
     <div onclick="nav(this)">
@@ -44,7 +36,7 @@
 
   <div id="lnav">
     <div>
-      <img id="fav" src="./img/con.png" alt="" />
+      <img id="fav" src="/img/con.png" alt="" />
       Ace Shillers
     </div>
     <div>
@@ -135,30 +127,30 @@
   </div>
 
   <div id="revww">
-  <div id="revw">
-    <div>
-      Still Need Convincing?
-    </div>
-    <hr />
-    <div>
-      Testimonies from our recent transactions can give you the assurance you need in trusting our services.
-    </div>
-    <div id="arev">
+    <div id="revw">
       <div>
-        <!-- idea -->
+        Still Need Convincing?
       </div>
-      <!--div class="fadt"></div>
-      <div class="fadb"></div-->
+      <hr />
+      <div>
+        Testimonies from our recent transactions can give you the assurance you need in trusting our services.
+      </div>
+      <div id="arev">
+        <div>
+          <!-- idea -->
+        </div>
+        <!--div class="fadt"></div>
+              <div class="fadb"></div-->
+      </div>
     </div>
-  </div>
-  <div id="part">
-    <div>
+    <div id="part">
+      <div>
         Partners
       </div>
       <hr />
       <div>
       </div>
-  </div>
+    </div>
   </div>
 
 
@@ -185,7 +177,7 @@
       <a href="https://t.me/alexander_nightangle">Let's Begin</a>
     </div>
     <div>
-      <img src="./img/bull.png" alt="bull" />
+      <img src="/img/bull.png" alt="bull" />
     </div>
   </div>
 
@@ -222,1106 +214,394 @@
     Copyright &copy; Aceshillers | Powered By <a href="https://wa.me/+2348123413704">Ace Corp</a>
   </div>
 
-<script async type="module">
-
-import * as THREE from 'https://unpkg.com/three@0.139.2/build/three.module.js';
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-const cg =document.querySelector('#can1');
-
-const renderer = new THREE.WebGLRenderer({antialiasing: true, cg});
-/*
-renderer.setSize( window.innerWidth, window.innerHeight );
-*/
-document.body.appendChild( renderer.domElement );
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
-
-camera.position.z = 5;
-
-function animate() {
-	requestAnimationFrame( animate );
-
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
-
-	renderer.render( scene, camera );
-}
-
-animate();
-
-
-
-/*
-
-import {GLTFLoader} from "./js/GLTFLoader.js";
-
-
-import * as gg from 'https://unpkg.com/three@0.139.2/build/three.module.js';
-*/
-/*
-import {GLTFLoader} from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
-
-import * as gg from 'three';
-import * as GLTFLoader from 'ldd';
-*/
-
-
-(function(){
-  var canvas = document.querySelector('#can1');
-
-  const rend = new gg.WebGLRenderer({
-    canvas: canvas,
-    antialiasing: true,
-    logarithmicDepthBuffer: true,
-    shadowMap: true,
-    //alpha: true,
-    shadowMapType: gg.PCFSoftShadowMap
-  });
-  rend.shadowMap.enabled = true;
-  rend.setClearColor(0x000000,0.96);
-
-
-  var fov = 75;
-  const cam = new gg.PerspectiveCamera(fov,
-    0.1,
-    1,
-    900);
-  cam.position.set(0,
-    0,
-    10);
-
-
-
-  //scene
-  const scene = new gg.Scene();
-  scene.fog = new gg.Fog('white', 20, 100);
-
-  const light = new gg.DirectionalLight('white',
-    2);
-  light.position.set(-9,
-    3,
-    9);
-  light.castShadow = true;
-  scene.add(light);
-
-
-  var box = new gg.Points(new gg.SphereGeometry(18, 40, 40,), new gg.PointsMaterial({
-    side: gg.FrontSide,
-    size: 0.01,
-    color: "white"
-  }));
-  scene.add(box);
-
-  //var rew = new OrbitControls(cam,
-  //rend.domElement);
-  //rew.update();
-
-
-
-  function anim() {
-
-    requestAnimationFrame(anim);
-
-    var canvas = rend.domElement;
-    var width = canvas.clientWidth;
-    var height = canvas.clientHeight;
-
-    cam.aspect = width/height;
-    cam.updateProjectionMatrix();
-
-    var needResize = canvas.width !== width || canvas.height !== height;
-    if (needResize) {
-      rend.setSize(width, height, false);
-    }
-
-    box.rotation.x += 0.001;
-    box.rotation.y += 0.001;
-
-    rend.render(scene, cam);
-
-    //console.log(vb);
-    //ec.render(anim);
-  }
-  
-anim();
-
-})();
+  <script async type="module">
 
 
 
 
-/*
-(function robb() {
 
-  var canvas = document.querySelector('#coin');
-
-  const rend = new gg.WebGLRenderer({
-    canvas: canvas,
-    antialiasing: true,
-    logarithmicDepthBuffer: true,
-    shadowMap: true,
-    alpha: true,
-    shadowMapType: gg.PCFSoftShadowMap
-  });
-  rend.shadowMap.enabled = true;
-  rend.setClearColor(0x000000,0);
+    import {
+      GLTFLoader
+    } from "/js/GLTFLoader.js";
 
 
-  var fov = 75;
-  const cam = new gg.PerspectiveCamera(fov,
-    0.1,
-    1,
-    900);
-  cam.position.set(0,
-    0,
-    20);
+    import * as gg from 'https://unpkg.com/three@0.139.2/build/three.module.js';
+
+    import {
+      GLTFLoader
+    } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+
+
+    (function() {
+      var canvas = document.querySelector('#can1');
+
+      const rend = new gg.WebGLRenderer({
+        canvas: canvas,
+        antialiasing: true,
+        logarithmicDepthBuffer: true,
+        shadowMap: true,
+        //alpha: true,
+        shadowMapType: gg.PCFSoftShadowMap
+      });
+      rend.shadowMap.enabled = true;
+      rend.setClearColor(0x000000, 0.96);
+
+
+      var fov = 75;
+      const cam = new gg.PerspectiveCamera(fov,
+        0.1,
+        1,
+        900);
+      cam.position.set(0,
+        0,
+        10);
 
 
 
-  //scene
-  const scene = new gg.Scene();
-  //scene.fog=new gg.Fog('white',50,100);
-  
-  const obj =new gg.Object3D();
+      //scene
+      const scene = new gg.Scene();
+      scene.fog = new gg.Fog('white', 20, 100);
 
-  const light = new gg.DirectionalLight('white',
-    2);
-  light.position.set(-9,
-    9,
-    4);
-  light.castShadow = true;
-  scene.add(light);
+      const light = new gg.DirectionalLight('white',
+        2);
+      light.position.set(-9,
+        3,
+        9);
+      light.castShadow = true;
+      scene.add(light);
 
 
-  //var rew = new OrbitControls(cam,rend.domElement);
-  //rew.update();
+      var box = new gg.Points(new gg.SphereGeometry(18, 40, 40,), new gg.PointsMaterial({
+        side: gg.FrontSide,
+        size: 0.01,
+        color: "white"
+      }));
+      scene.add(box);
+
+      function anim() {
+
+        requestAnimationFrame(anim);
+
+        var canvas = rend.domElement;
+        var width = canvas.clientWidth;
+        var height = canvas.clientHeight;
+
+        cam.aspect = width/height;
+        cam.updateProjectionMatrix();
+
+        var needResize = canvas.width !== width || canvas.height !== height;
+        if (needResize) {
+          rend.setSize(width, height, false);
+        }
+
+        box.rotation.x += 0.001;
+        box.rotation.y += 0.001;
+
+        rend.render(scene, cam);
+      }
+
+      anim();
+
+    })();
 
 
-  var ld = new GLTFLoader();
-
-  let mixer, cube, gltf, animations, func, funs;
-
-  function flod(url) {
-    return new Promise((resolve, reject)=> {
-      ld.load(url, resolve, undefined, reject);
-    });
-  }
 
 
-  (async ()=> {
-    await flod('/js/coin.glb').then(gltf=> {
 
-      animations = gltf.animations;
-      mixer = new gg.AnimationMixer(gltf.scene);
+    (function robb() {
 
-      for (var prop in animations) {
-        console.log(animations[prop]);
+      var canvas = document.querySelector('#coin');
+
+      const rend = new gg.WebGLRenderer({
+        canvas: canvas,
+        antialiasing: true,
+        logarithmicDepthBuffer: true,
+        shadowMap: true,
+        alpha: true,
+        shadowMapType: gg.PCFSoftShadowMap
+      });
+      rend.shadowMap.enabled = true;
+      rend.setClearColor(0x000000, 0);
+
+
+      var fov = 75;
+      const cam = new gg.PerspectiveCamera(fov,
+        0.1,
+        1,
+        900);
+      cam.position.set(0,
+        0,
+        20);
+
+      //scene
+      const scene = new gg.Scene();
+      //scene.fog=new gg.Fog('white',50,100);
+
+      const obj = new gg.Object3D();
+
+      const light = new gg.DirectionalLight('white',
+        2);
+      light.position.set(-9,
+        9,
+        4);
+      light.castShadow = true;
+      scene.add(light);
+
+
+      var ld = new GLTFLoader();
+
+      let mixer,
+      cube,
+      gltf,
+      animations,
+      func,
+      funs;
+
+      function flod(url) {
+        return new Promise((resolve, reject)=> {
+          ld.load(url, resolve, undefined, reject);
+        });
       }
 
 
+      (async ()=> {
+        await flod('/js/coin.glb').then(gltf=> {
 
+          animations = gltf.animations;
+          mixer = new gg.AnimationMixer(gltf.scene);
 
-      gltf.scene.position.set(0, 0, 0);
-      gltf.scene.scale.set(8,8,8);
-      obj.add(gltf.scene);
-      obj.rotation.x=Math.PI*.5;
-      scene.add(obj);
-
-
-
-    },
-      e=> {
-        console.log(e);
-      });
-  })();
+          gltf.scene.position.set(0, 0, 0);
+          gltf.scene.scale.set(8, 8, 8);
+          obj.add(gltf.scene);
+          obj.rotation.x = Math.PI*.5;
+          scene.add(obj);
 
 
 
+        },
+          e=> {
+            console.log(e);
+          });
+      })();
 
-  const clock = new gg.Clock();
-
-
-function anim() {
-
-    requestAnimationFrame(anim);
-
-    var canvas = rend.domElement;
-    var width = canvas.clientWidth;
-    var height = canvas.clientHeight;
-
-    cam.aspect = width/height;
-    cam.updateProjectionMatrix();
-
-    var needResize = canvas.width !== width || canvas.height !== height;
-    if (needResize) {
-      rend.setSize(width, height, false);
-    }
-    
-      obj.rotation.z+=0.01;
-      obj.rotation.y+=0.001;
-      rend.render(scene, cam);
-
-      
-    }
-    
-    anim();
+      const clock = new gg.Clock();
 
 
-  })();
+      function anim() {
 
-  
-  
+        requestAnimationFrame(anim);
+
+        var canvas = rend.domElement;
+        var width = canvas.clientWidth;
+        var height = canvas.clientHeight;
+
+        cam.aspect = width/height;
+        cam.updateProjectionMatrix();
+
+        var needResize = canvas.width !== width || canvas.height !== height;
+        if (needResize) {
+          rend.setSize(width, height, false);
+        }
+
+        obj.rotation.z += 0.01;
+        obj.rotation.y += 0.001;
+        rend.render(scene, cam);
+
+
+      }
+
+      anim();
+
+
+    })();
+
+
+
 (function robt() {
 
-  var canvas = document.querySelector('#robt');
+      var canvas = document.querySelector('#robt');
 
-  const rend = new gg.WebGLRenderer({
-    canvas: canvas,
-    antialiasing: true,
-    logarithmicDepthBuffer: true,
-    shadowMap: true,
-    alpha: true,
-    shadowMapType: gg.PCFSoftShadowMap
-  });
-  rend.shadowMap.enabled = true;
-  rend.setClearColor(0x000000,
-    0);
-
-
-  var fov = 75;
-  const cam = new gg.PerspectiveCamera(fov,
-    0.1,
-    1,
-    900);
-  cam.position.set(0,
-    0,
-    20);
-
-
-
-  //scene
-  const scene = new gg.Scene();
-  //scene.fog=new gg.Fog('white',50,100);
-
-  const light = new gg.DirectionalLight('white',
-    2);
-  light.position.set(-9,
-    9,
-    4);
-  light.castShadow = true;
-  scene.add(light);
-
-
-  //var rew = new OrbitControls(cam,rend.domElement);
-  //rew.update();
-
-
-  var ld = new GLTFLoader();
-
-  let mixer, cube, gltf, animations, func, funs;
-
-  function flod(url) {
-    return new Promise((resolve, reject)=> {
-      ld.load(url, resolve, undefined, reject);
-    });
-  }
-
-  var lani = [2, 0, 1, 3, 4, 5, 9, 11, 12, 13];
-
-  (async ()=> {
-    await flod('/js/RobotExpressive.glb').then(gltf=> {
-
-      animations = gltf.animations;
-      mixer = new gg.AnimationMixer(gltf.scene);
-
-      //for (var prop in animations) {console.log(animations[prop]);}
-
-      var bb = document.querySelector('#k4');
-
-
-
-      func = (a, b, d, e, g, h)=> {
-        var f = mixer.clipAction(animations[a]);
-        if (h == true) {
-          f.reset();
-        }
-        if (d != 0) {
-          f.setDuration(d);
-        }
-        if (e != 0) {
-          f.repetitions = e;
-        }
-        f.fadeIn(b);
-        if (g != 0) {
-          f.fadeOut(g);
-        }
-
-
-        f.play();
-
-      }
-
-
-      gltf.scene.position.set(0, -7, 0);
-      gltf.scene.scale.set(2.3, 2.3, 2.3);
-      scene.add(gltf.scene);
-
-
-
-    },
-      e=> {
-        console.log(e);
+      const rend = new gg.WebGLRenderer({
+        canvas: canvas,
+        antialiasing: true,
+        logarithmicDepthBuffer: true,
+        shadowMap: true,
+        alpha: true,
+        shadowMapType: gg.PCFSoftShadowMap
       });
-  })();
+      rend.shadowMap.enabled = true;
+      rend.setClearColor(0x000000,
+        0);
+
+
+      var fov = 75;
+      const cam = new gg.PerspectiveCamera(fov,
+        0.1,
+        1,
+        900);
+      cam.position.set(0,
+        0,
+        20);
 
 
 
+      //scene
+      const scene = new gg.Scene();
+      //scene.fog=new gg.Fog('white',50,100);
 
-  const clock = new gg.Clock();
+      const light = new gg.DirectionalLight('white',
+        2);
+      light.position.set(-9,
+        9,
+        4);
+      light.castShadow = true;
+      scene.add(light);
 
+      var ld = new GLTFLoader();
 
-  var vb = 0, va = 0, ki;
+      let mixer,
+      cube,
+      gltf,
+      animations,
+      func,
+      funs;
 
-  function anim() {
-
-    requestAnimationFrame(anim);
-
-    var canvas = rend.domElement;
-    var width = canvas.clientWidth;
-    var height = canvas.clientHeight;
-
-    cam.aspect = width/height;
-    cam.updateProjectionMatrix();
-
-    var needResize = canvas.width !== width || canvas.height !== height;
-    if (needResize) {
-      rend.setSize(width, height, false);
-    }
-
-    va++;
-    vb++;
-
-    if (va < 200) {
-      cam.zoom += 0.004;
-    }
-
-
-    if (mixer) {
-      mixer.update(clock.getDelta());
-    }
-
-
-    switch (true) {
-      case vb <= 150:
-        func(6, 1, 0, 0, 2, false);
-        break;
-
-      case vb == 200:
-        func(12, 1, 3, 1, 0, true);
-        break;
-
-      case vb >= 650:
-        ki = (Math.floor(Math.random()*lani.length-1))+1;
-
-        vb = 352;
-        func(lani[ki], 1, 4, 1, 0, true);
-
-        break;
-
-
-
-      default:
-        // code
-
+      function flod(url) {
+        return new Promise((resolve, reject)=> {
+          ld.load(url, resolve, undefined, reject);
+        });
       }
 
+      var lani = [2,
+        0,
+        1,
+        3,
+        4,
+        5,
+        9,
+        11,
+        12,
+        13];
 
-      rend.render(scene, cam);
+      (async ()=> {
+        await flod('/js/RobotExpressive.glb').then(gltf=> {
 
-      //console.log(vb);
-      //ec.render(anim);
-    }
-    
-    anim();
+          animations = gltf.animations;
+          mixer = new gg.AnimationMixer(gltf.scene);
 
 
-  })();
+          var bb = document.querySelector('#k4');
 
-*/
-  
- 
 
-</script>
 
+          func = (a, b, d, e, g, h)=> {
+            var f = mixer.clipAction(animations[a]);
+            if (h == true) {
+              f.reset();
+            }
+            if (d != 0) {
+              f.setDuration(d);
+            }
+            if (e != 0) {
+              f.repetitions = e;
+            }
+            f.fadeIn(b);
+            if (g != 0) {
+              f.fadeOut(g);
+            }
 
 
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="./css/cs.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="./font/css/all.css" type="text/css" media="all" />
-  <script defer src="./js/main.js" type="text/javascript" charset="utf-8"></script>
-  <!--script async type="importmap">
-    {
-      "imports": {
-        "three" : "/js/three.module.js"
-        "ldd": "/js/GLTFLoader.js"
-      }
-    }
-  </script-->
-  
-  <title>Ace Shill Community</title>
-</head>
-<body>
-  <canvas id="can1"></canvas>
+            f.play();
 
-  <div id="p2">
-      <div id="ds1"></div>
-      <div id="ds2"></div>
-    </div>
+          }
 
 
-  <div id="nav">
-    <div>
-      <img id="fav" src="./img/con.png" alt="" />
-      Ace Shillers
-    </div>
-    <div onclick="nav(this)">
-      <div class="na1"></div>
-      <div class="na2"></div>
-    </div>
-    <div id="navc">
-      <div>
-        <!--links-->
-      </div>
-    </div>
-  </div>
+          gltf.scene.position.set(0, -7, 0);
+          gltf.scene.scale.set(2.3, 2.3, 2.3);
+          scene.add(gltf.scene);
 
-  <div id="lnav">
-    <div>
-      <img id="fav" src="./img/con.png" alt="" />
-      Ace Shillers
-    </div>
-    <div>
-    </div>
-  </div>
 
 
+        },
+          e=> {
+            console.log(e);
+          });
+      })();
 
-  <div id="p1">
-    <div>
-      <div>
-        We <span id="atxt"></span>
-      </div>
-      <hr />
-      <div>
-        To go far and wide and ensure we Shill & raid strategically on all social media platforms, and grab the attention of potential investors and stakeholders to see the value and worth of the token being promoted
-      </div>
-      <div>
-        <a href="https://t.me/Incompletesentence">Get Started</a>
-      </div>
-      <div id="inv">
-      </div>
-    </div>
-    <div>
-      <canvas id="coin"></canvas>
-    </div>
-  </div>
 
-  <div id="p3">
-    <div>
-      Our Mission
-    </div>
-    <hr />
-    <div>
-      To go far and wide and ensure we Shill & raid strategically on all social media, and grab the attention of potential investors stakeholders to see the value and w orth of the token being promoted.
-    </div>
-  </div>
-  <br />
-  <div id="p4">
-    <div>
-      Our Vision
-    </div>
-    <hr />
-    <div>
-      To become the best globally acceptable Shilling company while seeing all our clients projects and tokens become successful during presales or Fairlaunch.
-    </div>
-  </div>
 
-  <div id="k2">
-    <div>
-      Perks you Enjoy
-    </div>
-    <hr />
-    <div>
-      Benefits our Users enjoy in Investing with our us
-    </div>
-    <div>
-      <!--word-->
 
-    </div>
-  </div>
+      const clock = new gg.Clock();
 
-  <div id="k4">
-    <div>
-      Meet Cody
-    </div>
-    <hr />
-    <div>
-      Cody is an A.I Twitter integrated Bot that aids in shilling on Twitter platform. Cody targets tweets based on the brand input and auto-tweets possible trending word contents.
-    </div>
-    <div>
-      <canvas id="robt">
 
-      </canvas>
-    </div>
+      var vb = 0, va = 0, ki;
 
-  </div>
+      function anim() {
 
+        requestAnimationFrame(anim);
 
-  <div id="k5">
+        var canvas = rend.domElement;
+        var width = canvas.clientWidth;
+        var height = canvas.clientHeight;
 
-    <div>
-      Get started with these steps
-    </div>
-    <div>
+        cam.aspect = width/height;
+        cam.updateProjectionMatrix();
 
-    </div>
-  </div>
-
-  <div id="revww">
-  <div id="revw">
-    <div>
-      Still Need Convincing?
-    </div>
-    <hr />
-    <div>
-      Testimonies from our recent transactions can give you the assurance you need in trusting our services.
-    </div>
-    <div id="arev">
-      <div>
-        <!-- idea -->
-      </div>
-      <!--div class="fadt"></div>
-      <div class="fadb"></div-->
-    </div>
-  </div>
-  <div id="part">
-    <div>
-        Partners
-      </div>
-      <hr />
-      <div>
-      </div>
-  </div>
-  </div>
-
-
-  <div id="k6">
-
-    <div>
-      Frequently Asked Questions
-    </div>
-    <div>
-      <!--faqs-->
-    </div>
-  </div>
-
-  <div id="alm">
-    <div>
-      <div>
-        Still Not Convinced?
-      </div>
-      <hr />
-      <div>
-        Then click the link below to get help from our helpdesk to help you determine what, when & how we can assist you.
-      </div>
-      <br />
-      <a href="https://t.me/alexander_nightangle">Let's Begin</a>
-    </div>
-    <div>
-      <img src="./img/bull.png" alt="bull" />
-    </div>
-  </div>
-
-
-  <div id="end">
-    <div>
-      ACE SHILL COMMUNITY
-    </div>
-    <div>
-      <ul>
-        <li>COMPANY</li>
-        <li><a href="#p1">About</a></li>
-        <li><a href="#k6">FAQs</a></li>
-      </ul>
-    </div>
-    <div>
-      <ul>
-        <li>CONTACTS</li>
-        <li><a href="mailto: lincxace@gmail.com">aceshillers@mail</a></li>
-        <li><a href="">The Paxton Building<br>122 FreeMan Avenue<br></a></li>
-      </ul>
-    </div>
-    <div>
-      <ul>
-        <li>SOCIAL</li>
-        <!--li><a href=""><i class="fab fa-twitter"></i>&nbsp;&nbsp; Twitter</a></li-->
-        <li><a href="https://t.me/alexander_nightangle"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp; Telegram</a></li>
-        <li><a href="https://t.me/Incompletesentence"><i class="fab fa-telegram"></i>&nbsp;&nbsp; Telegram</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="cred">
-    Copyright &copy; Aceshillers | Powered By <a href="https://wa.me/+2348123413704">Ace Corp</a>
-  </div>
-
-<script async type="module">
-
-// import * as THREE from '/three.module.js';
-  
-  import * as THREE from 'https://unpkg.com/three@0.139.2/build/three.module.js';
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-const cg =document.querySelector('#can1');
-
-const renderer = new THREE.WebGLRenderer({antialiasing: true, cg});
-/*
-renderer.setSize( window.innerWidth, window.innerHeight );
-*/
-document.body.appendChild( renderer.domElement );
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube ); 
-
-camera.position.z = 5;
-
-function animate() {
-	requestAnimationFrame( animate );
-
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
-
-	renderer.render( scene, camera );
-}
-
-animate();
-
-/*
-
-import {GLTFLoader} from "./js/GLTFLoader.js";
-
-
-import * as gg from 'https://unpkg.com/three@0.139.2/build/three.module.js';
-*/
-/*
-import {GLTFLoader} from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
-
-import * as gg from 'three';
-import * as GLTFLoader from 'ldd';
-*/
-
-/*
-(function(){
-  var canvas = document.querySelector('#can1');
-
-  const rend = new gg.WebGLRenderer({
-    canvas: canvas,
-    antialiasing: true,
-    logarithmicDepthBuffer: true,
-    shadowMap: true,
-    //alpha: true,
-    shadowMapType: gg.PCFSoftShadowMap
-  });
-  rend.shadowMap.enabled = true;
-  rend.setClearColor(0x000000,0.96);
-
-
-  var fov = 75;
-  const cam = new gg.PerspectiveCamera(fov,
-    0.1,
-    1,
-    900);
-  cam.position.set(0,
-    0,
-    10);
-
-
-
-  //scene
-  const scene = new gg.Scene();
-  scene.fog = new gg.Fog('white', 20, 100);
-
-  const light = new gg.DirectionalLight('white',
-    2);
-  light.position.set(-9,
-    3,
-    9);
-  light.castShadow = true;
-  scene.add(light);
-
-
-  var box = new gg.Points(new gg.SphereGeometry(18, 40, 40,), new gg.PointsMaterial({
-    side: gg.FrontSide,
-    size: 0.01,
-    color: "white"
-  }));
-  scene.add(box);
-
-  //var rew = new OrbitControls(cam,
-  //rend.domElement);
-  //rew.update();
-
-
-
-  function anim() {
-
-    requestAnimationFrame(anim);
-
-    var canvas = rend.domElement;
-    var width = canvas.clientWidth;
-    var height = canvas.clientHeight;
-
-    cam.aspect = width/height;
-    cam.updateProjectionMatrix();
-
-    var needResize = canvas.width !== width || canvas.height !== height;
-    if (needResize) {
-      rend.setSize(width, height, false);
-    }
-
-    box.rotation.x += 0.001;
-    box.rotation.y += 0.001;
-
-    rend.render(scene, cam);
-
-    //console.log(vb);
-    //ec.render(anim);
-  }
-  
-anim();
-
-})();
-
-
-
-
-
-(function robb() {
-
-  var canvas = document.querySelector('#coin');
-
-  const rend = new gg.WebGLRenderer({
-    canvas: canvas,
-    antialiasing: true,
-    logarithmicDepthBuffer: true,
-    shadowMap: true,
-    alpha: true,
-    shadowMapType: gg.PCFSoftShadowMap
-  });
-  rend.shadowMap.enabled = true;
-  rend.setClearColor(0x000000,0);
-
-
-  var fov = 75;
-  const cam = new gg.PerspectiveCamera(fov,
-    0.1,
-    1,
-    900);
-  cam.position.set(0,
-    0,
-    20);
-
-
-
-  //scene
-  const scene = new gg.Scene();
-  //scene.fog=new gg.Fog('white',50,100);
-  
-  const obj =new gg.Object3D();
-
-  const light = new gg.DirectionalLight('white',
-    2);
-  light.position.set(-9,
-    9,
-    4);
-  light.castShadow = true;
-  scene.add(light);
-
-
-  //var rew = new OrbitControls(cam,rend.domElement);
-  //rew.update();
-
-
-  var ld = new GLTFLoader();
-
-  let mixer, cube, gltf, animations, func, funs;
-
-  function flod(url) {
-    return new Promise((resolve, reject)=> {
-      ld.load(url, resolve, undefined, reject);
-    });
-  }
-
-
-  (async ()=> {
-    await flod('/js/coin.glb').then(gltf=> {
-
-      animations = gltf.animations;
-      mixer = new gg.AnimationMixer(gltf.scene);
-
-      for (var prop in animations) {
-        console.log(animations[prop]);
-      }
-
-
-
-
-      gltf.scene.position.set(0, 0, 0);
-      gltf.scene.scale.set(8,8,8);
-      obj.add(gltf.scene);
-      obj.rotation.x=Math.PI*.5;
-      scene.add(obj);
-
-
-
-    },
-      e=> {
-        console.log(e);
-      });
-  })();
-
-
-
-
-  const clock = new gg.Clock();
-
-
-function anim() {
-
-    requestAnimationFrame(anim);
-
-    var canvas = rend.domElement;
-    var width = canvas.clientWidth;
-    var height = canvas.clientHeight;
-
-    cam.aspect = width/height;
-    cam.updateProjectionMatrix();
-
-    var needResize = canvas.width !== width || canvas.height !== height;
-    if (needResize) {
-      rend.setSize(width, height, false);
-    }
-    
-      obj.rotation.z+=0.01;
-      obj.rotation.y+=0.001;
-      rend.render(scene, cam);
-
-      
-    }
-    
-    anim();
-
-
-  })();
-
-  
-  
-(function robt() {
-
-  var canvas = document.querySelector('#robt');
-
-  const rend = new gg.WebGLRenderer({
-    canvas: canvas,
-    antialiasing: true,
-    logarithmicDepthBuffer: true,
-    shadowMap: true,
-    alpha: true,
-    shadowMapType: gg.PCFSoftShadowMap
-  });
-  rend.shadowMap.enabled = true;
-  rend.setClearColor(0x000000,
-    0);
-
-
-  var fov = 75;
-  const cam = new gg.PerspectiveCamera(fov,
-    0.1,
-    1,
-    900);
-  cam.position.set(0,
-    0,
-    20);
-
-
-
-  //scene
-  const scene = new gg.Scene();
-  //scene.fog=new gg.Fog('white',50,100);
-
-  const light = new gg.DirectionalLight('white',
-    2);
-  light.position.set(-9,
-    9,
-    4);
-  light.castShadow = true;
-  scene.add(light);
-
-
-  //var rew = new OrbitControls(cam,rend.domElement);
-  //rew.update();
-
-
-  var ld = new GLTFLoader();
-
-  let mixer, cube, gltf, animations, func, funs;
-
-  function flod(url) {
-    return new Promise((resolve, reject)=> {
-      ld.load(url, resolve, undefined, reject);
-    });
-  }
-
-  var lani = [2, 0, 1, 3, 4, 5, 9, 11, 12, 13];
-
-  (async ()=> {
-    await flod('/js/RobotExpressive.glb').then(gltf=> {
-
-      animations = gltf.animations;
-      mixer = new gg.AnimationMixer(gltf.scene);
-
-      //for (var prop in animations) {console.log(animations[prop]);}
-
-      var bb = document.querySelector('#k4');
-
-
-
-      func = (a, b, d, e, g, h)=> {
-        var f = mixer.clipAction(animations[a]);
-        if (h == true) {
-          f.reset();
+        var needResize = canvas.width !== width || canvas.height !== height;
+        if (needResize) {
+          rend.setSize(width, height, false);
         }
-        if (d != 0) {
-          f.setDuration(d);
-        }
-        if (e != 0) {
-          f.repetitions = e;
-        }
-        f.fadeIn(b);
-        if (g != 0) {
-          f.fadeOut(g);
+
+        va++;
+        vb++;
+
+        if (va < 200) {
+          cam.zoom += 0.004;
         }
 
 
-        f.play();
-
-      }
-
-
-      gltf.scene.position.set(0, -7, 0);
-      gltf.scene.scale.set(2.3, 2.3, 2.3);
-      scene.add(gltf.scene);
+        if (mixer) {
+          mixer.update(clock.getDelta());
+        }
 
 
+        switch (true) {
+          case vb <= 150:
+            func(6, 1, 0, 0, 2, false);
+            break;
 
-    },
-      e=> {
-        console.log(e);
-      });
-  })();
+          case vb == 200:
+            func(12, 1, 3, 1, 0, true);
+            break;
 
+          case vb >= 650:
+            ki = (Math.floor(Math.random()*lani.length-1))+1;
 
+            vb = 352;
+            func(lani[ki], 1, 4, 1, 0, true);
 
-
-  const clock = new gg.Clock();
-
-
-  var vb = 0, va = 0, ki;
-
-  function anim() {
-
-    requestAnimationFrame(anim);
-
-    var canvas = rend.domElement;
-    var width = canvas.clientWidth;
-    var height = canvas.clientHeight;
-
-    cam.aspect = width/height;
-    cam.updateProjectionMatrix();
-
-    var needResize = canvas.width !== width || canvas.height !== height;
-    if (needResize) {
-      rend.setSize(width, height, false);
-    }
-
-    va++;
-    vb++;
-
-    if (va < 200) {
-      cam.zoom += 0.004;
-    }
-
-
-    if (mixer) {
-      mixer.update(clock.getDelta());
-    }
-
-
-    switch (true) {
-      case vb <= 150:
-        func(6, 1, 0, 0, 2, false);
-        break;
-
-      case vb == 200:
-        func(12, 1, 3, 1, 0, true);
-        break;
-
-      case vb >= 650:
-        ki = (Math.floor(Math.random()*lani.length-1))+1;
-
-        vb = 352;
-        func(lani[ki], 1, 4, 1, 0, true);
-
-        break;
+            break;
 
 
 
-      default:
-        // code
+          default:
+            // code
 
-      }
+          }
+          rend.render(scene, cam);
+        }
 
-
-      rend.render(scene, cam);
-
-      //console.log(vb);
-      //ec.render(anim);
-    }
-    
-    anim();
+        anim();
 
 
-  })();
-
-*/
-  
- 
-
-</script>
+      })();
 
 
 
-</body>
+
+
+
+
+    </script>
+  </body>
 </html>
