@@ -17,7 +17,7 @@ a {
 
 @font-face {
   font-family: bevel;
-  src: url('font/3Dumb.ttf');
+  src: url('./font/3Dumb.ttf');
 }
 
 @font-face {
