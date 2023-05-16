@@ -652,14 +652,14 @@ hr {
 
 #arev>div>div>div:nth-child(2)>div:first-child {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #a87825;
 }
 
 #arev>div>div>div:nth-child(2)>div:nth-child(2) {
   margin-top: 1rem;
   color: #ffffff90;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 #arev .fadt {
@@ -778,12 +778,12 @@ hr {
 
 #end>div:first-child {
   font-family: bevel;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 #end ul>li:first-child {
   font-weight: 900;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 #end ul>li {
