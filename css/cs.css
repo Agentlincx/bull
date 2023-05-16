@@ -17,22 +17,22 @@ a {
 
 @font-face {
   font-family: bevel;
-  src: url('./font/3Dumb.ttf');
+  src: url('../font/3Dumb.ttf');
 }
 
 @font-face {
   font-family: alg;
-  src: url('font/sofia.ttf');
+  src: url('../font/sofia.ttf');
 }
 
 @font-face {
   font-family: dash;
-  src: url('font/dash.otf');
+  src: url('../font/dash.otf');
 }
 
 @font-face {
   font-family: lon;
-  src: url('font/lon.ttf');
+  src: url('../font/lon.ttf');
 }
 
 
