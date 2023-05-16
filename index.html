@@ -486,7 +486,7 @@ import * as THREE from 'three';
         13];
 
       (async ()=> {
-        await flod('/js/RobotExpressive.glb').then(gltf=> {
+        await flod('js/RobotExpressive.glb').then(gltf=> {
 
           animations = gltf.animations;
           mixer = new THREE.AnimationMixer(gltf.scene);
