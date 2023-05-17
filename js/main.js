@@ -2,7 +2,7 @@
   var i = 0;
   var ii = 0;
   var check = 0;
-  var speed = 15;
+  var speed = 50;
   var q = '';
   var arr = ['Build',
     'Develop',
@@ -243,6 +243,7 @@ function antt(a) {
   var ar = ["#k2", "#p1", "#p3", "#p4", "#nav"];
 
   qp.addEventListener("scroll", animat);
+  qp.addEventListener("focus", animat);
   window.addEventListener("load", animat);
 
   function animat() {
@@ -331,6 +332,8 @@ function antt(a) {
   qp.addEventListener("scroll",
     animt);
   window.addEventListener("load",
+    animt);
+  window.addEventListener("focus",
     animt);
 
   function animt() {
@@ -458,15 +461,17 @@ function antt(a) {
 (function() {
   var a = document.querySelectorAll("#k6 .lii");
 
-  qp.addEventListener("scroll",
-    function() {
+  qp.addEventListener("scroll", k66);
+  qp.addEventListener("load", k66);
+  qp.addEventListener("focus", k66);
+    function k66() {
       for (var i = 0; i < a.length; i++) {
         if (Math.round(a[i].getBoundingClientRect().top) <= 1000) {
           a[i].style.transform = "translateY(0px)";
           a[i].style.opacity = "1";
         }
       }
-    });
+    }
 })();
 
 (function() {
