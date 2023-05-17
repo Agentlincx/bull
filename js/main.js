@@ -2,7 +2,7 @@
   var i = 0;
   var ii = 0;
   var check = 0;
-  var speed = 30;
+  var speed = 15;
   var q = '';
   var arr = ['Build',
     'Develop',
