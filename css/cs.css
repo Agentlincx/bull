@@ -713,11 +713,11 @@ hr {
   transition: .8s;
   transform: translateY(100px);
   box-shadow: 0px 2px 5px grey;
-  font-size: 1.1rem
+  font-size: 1rem
 }
 
 #k6 .li {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .active {}
@@ -789,7 +789,7 @@ hr {
 
 #end ul>li {
   margin-top: 1.1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 #end ul>li>a>i {
