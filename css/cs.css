@@ -339,7 +339,7 @@ a {
 #p1 a, #alm a {
   background-color: #a87825;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   padding: 0.7rem 1rem;
   display: inline-block;
   border-radius: 5px;
@@ -659,7 +659,7 @@ hr {
 #arev>div>div>div:nth-child(2)>div:nth-child(2) {
   margin-top: .8rem;
   color: #ffffff90;
-  font-size: 1rem;
+  font-size: .8rem;
 }
 
 #arev .fadt {
@@ -704,7 +704,7 @@ hr {
   color: rgba(255,255,255,0.7);
   max-height: 0;
   overflow: hidden;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: max-height 0.2s ease-out;
 }
 
@@ -716,7 +716,7 @@ hr {
 }
 
 #k6 .li {
-  font-size: 1rem !important;
+  font-size: ;
 }
 
 .active {}
